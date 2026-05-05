@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/TriviaGAME.js"></script>
+    <script src="js/TriviaAPI.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <section class="general-wrapper fdr small-gap">
+        <div id="contenedor-menu" class="question-container fdc">
+            <h2 class="main-title">Trivia</h2>
+            <h2 id="titulo-dificultad" class="title-2">Dificultad: Fácil</h2>
+            <div class="container fdr margin-auto">
+                <button id="boton-dif-facil" data-difficulty="Fácil" class="difficulty-button easy">Fácil</button>
+                <button id="boton-dif-medio" data-difficulty="Medio" class="difficulty-button medium">Medio</button>
+                <button id="boton-dif-dificil" data-difficulty="Difícil" class="difficulty-button hard">Difícil</button>
+            </div>
+            <h3>Categoria</h2>
+            <select id="categories-group">
+                <option value="1">Ciencia</option>
+                <option value="2">Ciencia</option>
+                <option value="3">Ciencia</option>
+            </select>
+            <button id="boton-jugar" class="play-button margin-auto">Jugar</button>
+        </div>
+    </section>
+</body>
+</html>
