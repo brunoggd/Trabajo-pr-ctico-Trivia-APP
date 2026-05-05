@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="javascript/TriviaGAME.js"></script>
     <script src="javascript/TriviaAPI.js"></script>
-    <script src="main.js"></script>
+    <script src="javascript/main.js"></script>
 </head>
 <body>
     <section class="general-wrapper fdr small-gap">
@@ -15,9 +15,9 @@
             <h2 class="main-title">Trivia</h2>
             <h2 id="titulo-dificultad" class="title-2">Dificultad: Fácil</h2>
             <div class="container fdr margin-auto">
-                <button id="boton-dif-facil" class="difficulty-button easy">Fácil</button>
-                <button id="boton-dif-medio" class="difficulty-button medium">Medio</button>
-                <button id="boton-dif-dificil" class="difficulty-button hard">Difícil</button>
+                <button id="boton-dif-facil" data-difficulty="easy" class="difficulty-button easy">Fácil</button>
+                <button id="boton-dif-medio" data-difficulty="medium" class="difficulty-button medium">Medio</button>
+                <button id="boton-dif-dificil" data-difficulty="hard" class="difficulty-button hard">Difícil</button>
             </div>
             <button id="boton-jugar" class="play-button margin-auto">Jugar</button>
         </div>
