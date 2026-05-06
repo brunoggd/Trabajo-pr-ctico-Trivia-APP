@@ -3,7 +3,6 @@
 import TriviaAPI from "./TriviaAPI.js";
 import TriviaGAME from "./TriviaGAME.js";
 
-// const contenedor_el_del_emdio = document.querySelector('#1');
 const api = new TriviaAPI();
 const game = new TriviaGAME();
 
@@ -25,11 +24,16 @@ const boton_dif_dificil = document.querySelector('#boton-dif-dificil');
 
 const selector_categorias = document.querySelector('#categories-group');
 
+let dificultad_seleccionada;
+let categoria_seleccionada;
+
 boton_iniciar_juego.addEventListener('click', () => {
     if (dificultad_seleccionada && categoria_seleccionada) {
         console.log(dificultad_seleccionada, categoria_seleccionada);
         contenedor_juego.style.display = "flex";
         contenedor_menu.style.display = "none";
+        console.log(`Configuracion elegida: ${dificultad_seleccionada}, ${categoria_seleccionada}`)
+        
     }
                                 // ( || ): O lógico
     else if (!dificultad_seleccionada || !categoria_seleccionada) {
@@ -39,9 +43,6 @@ boton_iniciar_juego.addEventListener('click', () => {
 
 const botones = [boton_dif_facil, boton_dif_medio, boton_dif_dificil];
 
-let dificultad_seleccionada;
-let categoria_seleccionada;
-
 botones.forEach(boton => {
     boton.addEventListener('click', () => {
         titulo_dificultad.textContent = `Dificultad: ${boton.dataset.difficulty}`;
@@ -49,38 +50,25 @@ botones.forEach(boton => {
         if (boton.dataset.difficulty === "Fácil") {
             dificultad_seleccionada = 1;
         }
-
         else if (boton.dataset.difficulty === "Medio") {
             dificultad_seleccionada = 2;
         }
-
         else {
             dificultad_seleccionada = 3;
         }
     });
 });
 
-function decodificarHTML(texto) {
-    contenedor_el_del_emdio.createElement('textarea');
-    // contenedor_el_del_emdio.innerHTML = texto;
-    // return contenedor_el_del_emdio.value;
-}
-
 const categorias = [{"id":1,"name": "Seleccione una categoria"}];
 const m = await api.getCategorias();
 const todas = categorias.concat(m);
-console.log(todas);
 
 selector_categorias.innerHTML = todas.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
 
 selector_categorias.addEventListener('change', () => {
-    categoria_seleccionada = selector_categorias.value;
-
-    if(categoria_seleccionada === 1) {
-        categoria_seleccionada.value = 9;
+    selector_categorias.value = selector_categorias.value; // .value devuelve string
+    if(selector_categorias.value === "1") {
+        selector_categorias.value = 9;
     }
-
-    else {
-        console.log("else");
-    }
+    categoria_seleccionada=selector_categorias.value
 });

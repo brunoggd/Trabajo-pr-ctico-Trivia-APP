@@ -12,7 +12,6 @@ class TriviaGAME {
     }
 
     async responder(respuesta) {
-        // jaja salu2
     }
 
     async haTerminado() {

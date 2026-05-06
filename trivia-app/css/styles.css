@@ -28,6 +28,10 @@
     border: 2px solid #969696;
 }
 
+.custom-padding {
+    padding: 20px;
+}
+
 .custom-size {
     height: 200px;
     width: 500px;
@@ -58,7 +62,7 @@
     justify-content: center;
     gap: 15px;
     margin: auto;
-    box-shadow: 0 0 15px 0 #0009;
+    box-shadow: 0 0 5px 0 black;
     text-wrap: pretty;
     overflow: auto;
     overflow-x: hidden;
