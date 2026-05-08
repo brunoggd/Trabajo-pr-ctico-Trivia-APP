@@ -214,8 +214,9 @@
 
 .question {
     text-wrap: pretty;
-    font-weight: 600;
-    font-size: 17px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
     overflow: auto;
     padding: 25px;
 }
