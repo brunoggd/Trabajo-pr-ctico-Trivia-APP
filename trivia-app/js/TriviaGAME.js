@@ -7,15 +7,42 @@ class TriviaGAME {
         this.puntaje = 0;
     }
 
-    async iniciar(preguntas) {
-        const estado = 0;
+    iniciar(preguntas) {
+        this.preguntas = preguntas;
+
+        this.preguntaActual = 0;
+        this.puntaje = 0;
     }
 
-    async responder(respuesta) {
+    getPreguntaActual() {
+        return this.preguntas[this.preguntaActual];
     }
 
-    async haTerminado() {
+    siguiente() {
+        this.preguntaActual ++;
+    }
 
+    responder(respuesta) {
+        if(respuesta === this.preguntas[this.preguntaActual].correct_answer) {
+            this.puntaje ++;
+            console.log("LA RESPUESTA ES CORRECTA!!!");
+            return true;
+        }
+
+        else {
+            console.log("SOS UN MOGOLICO");
+            return false;
+        }
+    }
+
+    haTerminado() {
+        if(this.preguntaActual >= this.preguntas.length) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
     }
 }
 
