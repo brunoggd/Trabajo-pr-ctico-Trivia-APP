@@ -31,7 +31,7 @@ class TriviaGAME {
             
             this.actualizarcontenedor(contenedor);
 
-            console.log("LA RESPUESTA ES CORRECTA!!!", "INDICE:", this.preguntaActual);
+            // console.log("LA RESPUESTA ES CORRECTA!!!", "INDICE:", this.preguntaActual);
             return true;
         }
 
@@ -40,7 +40,7 @@ class TriviaGAME {
 
             this.actualizarcontenedor(contenedor);
 
-            console.log("SOS UN MOGOLICO", "INDICE:", this.preguntaActual);
+            // console.log("SOS UN MOGOLICO", "INDICE:", this.preguntaActual);
             return false;
         }
     }

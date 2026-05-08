@@ -150,12 +150,18 @@ function MostrarPregunta(preguntas) {
                                                         <div class="score-container">${game.puntaje}</div>
                                                         <button id="boton-volver-a-jugar" class="play-button">Volver a jugar</button>`;
 
-                boton_volver_a_jugar = document.querySelector('#boton-volver-a-jugar');
 
+                boton_volver_a_jugar = document.querySelector('#boton-volver-a-jugar');
                 boton_volver_a_jugar.addEventListener('click', () => {
                     contenedor_fin_del_juego.style.display = "none";
-
                     contenedor_menu.style.display = "flex";
+                    titulo_dificultad.textContent = "Seleccione una dificultad";
+                    dificultad_seleccionada="";
+                    console.log(dificultad_seleccionada);
+                    selector_categorias.value=1;
+                    categoria_seleccionada=selector_categorias.value;
+                    console.log(categoria_seleccionada);
+                    
                 });
             }
 
@@ -175,9 +181,10 @@ const categorias_totales = categorias.concat(demas_categorias);
 selector_categorias.innerHTML = categorias_totales.map(c => `<option value="${c.id}" class="selector">${c.name}</option>`).join('');
 
 selector_categorias.addEventListener('change', () => {
-    categoria_seleccionada = selector_categorias.value;
 
-    if (categoria_seleccionada === 1) {
-        categoria_seleccionada.value = 9;
+    if (selector_categorias.value === "1") {
+        selector_categorias.value = 9;
     }
+    categoria_seleccionada = selector_categorias.value
+    console.log(categoria_seleccionada)
 });
