@@ -28,10 +28,6 @@
     border: 2px solid #969696;
 }
 
-.custom-padding {
-    padding: 20px;
-}
-
 .custom-size {
     height: 200px;
     width: 500px;
@@ -39,7 +35,7 @@
 
 .custom-size-2 {
     width: 95%;
-    height: 50%;
+    height: 40%;
 }
 
 .margin-auto {
@@ -49,7 +45,18 @@
 .small-gap {
     gap: 10px;
 }
-
+.question-score-index-container{
+    display: flex;
+    
+    flex-wrap: wrap;
+    width: 500px;
+    height:50px;
+    background-color:#F2F2F2;
+    border-radius: 25px;
+    border: 3px solid gray;
+    align-items: center;
+    justify-content: center;
+}
 .question-container {
     display: flex;
     flex-wrap: wrap;
@@ -62,11 +69,12 @@
     justify-content: center;
     gap: 15px;
     margin: auto;
-    box-shadow: 0 0 5px 0 black;
+    box-shadow: 0 0 15px 0 #0009;
     text-wrap: pretty;
     overflow: auto;
     overflow-x: hidden;
 }
+
 
 .fdc {
     flex-direction: column;
@@ -82,7 +90,6 @@
     font-weight: 100;
     padding: 10px 25px;
     background: transparent;
-    margin-bottom: 25px;
 }
 
 .title-2 {
@@ -108,7 +115,7 @@
 
 .button {
     width: 200px;
-    height: 50px;
+    min-height: 50px;
     text-align: center;
     font-weight: 700;
     font-size: 20px;
@@ -118,6 +125,8 @@
     border-radius: 25px;
     border: 4px solid gray;
     padding-top: 0;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .button:hover {
@@ -190,6 +199,7 @@
 .answer-bg-colour {
     background-color: #F0F0F0;
 }
+.correct-answer-bg-color{background-color:green}
 
 .main-title {
     font-size: 25px;
@@ -216,7 +226,43 @@
 
 .question {
     text-wrap: pretty;
-    font-weight: 600;
-    font-size: 17px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
     overflow: auto;
+    padding: 25px;
+}
+
+.selector {
+    width: 350px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+    text-wrap: pretty;
+    text-indent: 15px;
+    font-weight: 100;
+    background: #A464F7;
+    border: 2px solid #34066F;
+    transition: all 0.5s;
+    outline: 0;
+}
+
+.selector:hover {
+    box-shadow: 0 4px 4px 0 #34066F;
+}
+
+.selector option {
+    background-color: #BD90F9;
+    font-weight: 100;
+    transition: all 0.5s;
+}
+
+.custom-padding {
+    padding: 25px;
+}
+
+.question-text {
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
 }

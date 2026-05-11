@@ -1,7 +1,7 @@
-TO DO LIST:
-
-1) Desmenuzar el json de las preguntas y guardarlos en 3 listas diferentes, fácil, medio y difícil según dificultad.
-
-2) Hacer un for del json obtenido y preguntar su dificultad y guardarlo en su respectiva lista. Asociar cada lista al botón de dificultad.
-
-3) Aleatorizar todo, preguntas y respuestas.
+FALTA:
+Decodificador HTML
+Guardar en localStorage los últimos 5 puntajes con fecha. Mostrarlos en la pantalla final.
+Mostrar al usuario:
+    Un mensaje de "Cargando preguntas..." mientras se hace el fetch, "Completado"?
+    Un mensaje de error claro si la API falla (sin mostrar el error técnico crudo), ya
+    Un botón "Reintentar" cuando hay error
