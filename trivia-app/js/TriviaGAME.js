@@ -26,31 +26,30 @@ class TriviaGAME {
 
     responder(respuesta, contenedor) {
         if(respuesta === this.getPreguntaActual().correct_answer) {
-            this.puntaje ++;
-            this.siguiente();
+            setTimeout(() => {
+                this.puntaje++;
+                this.siguiente();;
+            }, 1500);
             
             this.actualizarcontenedor(contenedor);
-
-            // console.log("LA RESPUESTA ES CORRECTA!!!", "INDICE:", this.preguntaActual);
             return true;
         }
 
         else {
-            this.siguiente();
+            setTimeout(() => {
+                this.siguiente();;
+            }, 1500);
 
             this.actualizarcontenedor(contenedor);
 
-            // console.log("SOS UN MOGOLICO", "INDICE:", this.preguntaActual);
             return false;
         }
     }
 
-    actualizarcontenedor (contenedor) {
+    actualizarcontenedor (contenedor_info) {
         if (this.preguntaActual < this.preguntas.length) {
-            contenedor.innerHTML = `<div id="contenedor-preguntaindex-score" class="wrapper margin-auto small-gap">
-                                    <h2 class="question-title">Pregunta ${this.preguntaActual + this.aumento} de 10</h2>
-                                    <h2 class="question-title">Puntuación: ${this.puntaje}</h2>
-                                </div>`;
+            contenedor_info.innerHTML = `<h2 class="question-title">Pregunta ${this.preguntaActual + this.aumento} de 10</h2>
+                                        <h2 class="question-title">Puntuación: ${this.puntaje}</h2>`;
         }
     }
 

@@ -4,22 +4,40 @@ class TriviaAPI {
     constructor() {
     }
     async getPreguntas(cantidad = 10, categoria = "", dificultad = "") {
-        
         const endpoint = `https://opentdb.com/api.php?amount=${cantidad}&category=${categoria}&difficulty=${dificultad}&type=multiple`;
-        const response = await fetch(endpoint);
-        const data = await response.json();
+        
+        try {
+            const response = await fetch(endpoint);
 
-        console.log(data.results);
+            if(!response.ok) {
+                throw new Error(`Error ${response.status}: ${response.statusText}`);
+            }
 
-        return data.results;
+            const data = await response.json();
+            return data.results;
+
+        } catch (error) {
+            console.error('Falló la petición:', error.message);
+        }
 
     }
 
     async getCategorias() {
         const endpoint = "https://opentdb.com/api_category.php";
-        const response = await fetch(endpoint);
-        const data = await response.json();
-        return data.trivia_categories;
+        
+        try {
+            const response = await fetch(endpoint);
+
+            if(!response.ok) {
+                throw new Error(`Error ${response.status}: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            return data.trivia_categories;
+
+        } catch (error) {
+            console.error('Falló la petición:', error.message);
+        }
     }
 
 }

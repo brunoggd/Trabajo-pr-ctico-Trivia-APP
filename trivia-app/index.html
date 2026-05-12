@@ -8,35 +8,31 @@
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
-    <section class="general-wrapper fdr small-gap">
-        <div id="contenedor-menu" class="question-container fdc">
+    <section id="general-wrapper">
+        <div id="contenedor-menu">
             <h2 class="main-title">Trivia</h2>
             <h2 id="titulo-dificultad" class="title-2">Seleccione una dificultad</h2>
-            <div class="container fdr margin-auto">
-                <button id="boton-dif-facil" data-difficulty="Fácil" class="difficulty-button easy">Fácil</button>
-                <button id="boton-dif-medio" data-difficulty="Medio" class="difficulty-button medium">Medio</button>
-                <button id="boton-dif-dificil" data-difficulty="Difícil" class="difficulty-button hard">Difícil</button>
+            <div class="wrapper fdr margin-auto dif-buttons-container">
+                <button id="boton-dif-facil" data-difficulty="Fácil" class="button difficulty-button easy">Fácil</button>
+                <button id="boton-dif-medio" data-difficulty="Medio" class="button difficulty-button medium">Medio</button>
+                <button id="boton-dif-dificil" data-difficulty="Difícil" class="button difficulty-button hard">Difícil</button>
             </div>
-            <h3>Categoria</h3>
-            <select id="categories-group" class="selector"><!--Esto se va a rellenar con un map--></select>
-            <button id="boton-jugar" class="play-button margin-auto">Jugar</button>
+            <h2>Categoria</h2>
+            <select id="categories-group">
+                <!--Esto se va a rellenar con un selector_categorias.innerHTML-->
+            </select>
+            <button id="boton-jugar">Jugar</button>
         </div>
-        <div id="contenedor-juego" class="wrapper margin-auto fdc custom-padding">
-            <div id="contenedor-preguntaindex-score" class="wrapper margin-auto small-gap"></div>
-            <div id="contenedor-pregunta" class="question-container fdc">
-                <div class="wrapper custom-size-2 question-box-style">
-                    <p class="question margin-auto"></p>
-                </div>
-                <div class="wrapper fdr custom-size">
-                    <button id="respuesta-1" class="button margin-auto answer-bg-colour"><p class="question-text"></p></button>
-                    <button id="respuesta-2" class="button margin-auto answer-bg-colour"><p class="question-text"></p></button>
-                    <button id="respuesta-3" class="button margin-auto answer-bg-colour"><p class="question-text"></p></button>
-                    <button id="respuesta-4" class="button margin-auto answer-bg-colour"><p class="question-text"></p></button>
-                </div>`
+        <div id="contenedor-juego">
+            <div id="contenedor-preguntaindex-score">
+                <!-- ActualizarContenedor.contenedor_info.innerHTML -->
+            </div>
+            <div id="contenedor-pregunta"> 
+                <!-- MostrarPregunta.contenedor_pregunta -->
             </div>
         </div>
-        <div id="contenedor-fin-juego" class="question-container fdc margin-auto">
-            <button id="boton-volver-a-jugar" class="play-button">Volver a jugar</button>
+        <div id="contenedor-fin-juego">
+            <!-- game.haTerminado() -->
         </div>
     </section>
 </body>
